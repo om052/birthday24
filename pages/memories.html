@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="theme-color" content="#080B18">
+    <meta name="description" content="Our Little Universe of Memories — six photographs in slow orbit.">
+    <meta name="robots" content="noindex">
+    <title>Our Little Universe of Memories</title>
+
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23080B18'/%3E%3Ccircle cx='16' cy='13' r='5.5' fill='%23E8CB91'/%3E%3Cpath d='M7 25c3.5-4.5 14.5-4.5 18 0' fill='none' stroke='%23B6A7E8' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Jost:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+    <noscript><style>
+        .reveal-item, [data-reveal] { opacity: 1 !important; transform: none !important; filter: none !important; }
+    </style></noscript>
+</head>
+<body class="page-memories">
+
+    <!-- cinematic background ------------------------------------------------ -->
+    <div class="scene" aria-hidden="true">
+        <div class="scene__stars scene__stars--far"></div>
+        <div class="scene__stars"></div>
+        <div class="scene__nebula"></div>
+        <div class="scene__bokeh">
+            <span class="bokeh bokeh--1"></span>
+            <span class="bokeh bokeh--2"></span>
+            <span class="bokeh bokeh--3"></span>
+        </div>
+        <div class="scene__vignette"></div>
+        <div class="scene__grain"></div>
+    </div>
+
+    <!-- top navigation ------------------------------------------------------ -->
+    <header class="topbar">
+        <a class="brand" href="../index.html">
+            <span class="brand__mark" aria-hidden="true"></span>
+            <span class="brand__text">For Swaraa</span>
+        </a>
+        <nav class="topnav" aria-label="Primary">
+            <a href="../index.html">Intro</a>
+            <a href="birthday.html">The Letter</a>
+            <a href="memories.html" aria-current="page">Memories</a>
+        </nav>
+    </header>
+
+    <!-- the memory universe -------------------------------------------------- -->
+    <main class="memories">
+
+        <header class="memories__intro">
+            <p class="eyebrow" data-reveal>Chapter Three</p>
+            <h1 class="memories__title" data-reveal>
+                Our Little Universe <em>of Memories</em>
+            </h1>
+            <p class="memories__lede" data-reveal>
+                Six moments, slowly orbiting the one who made them.
+            </p>
+        </header>
+
+        <div class="orbit-stage" id="orbit-stage" aria-label="Orbiting photographs — drag to rotate, click to enlarge">
+            <div class="orbit-motes" aria-hidden="true">
+                <span class="mote" style="--dur: 19s; --delay: 0s;   --dx: 32px;  --peak: 0.75; left: 14%; bottom: 4%;"></span>
+                <span class="mote mote--rose" style="--dur: 24s; --delay: 3s;  --dx: -26px; --peak: 0.6;  left: 27%; bottom: 2%;"></span>
+                <span class="mote" style="--dur: 21s; --delay: 6s;  --dx: 18px;  --peak: 0.55; left: 68%; bottom: 6%;"></span>
+                <span class="mote mote--lav" style="--dur: 27s; --delay: 1.5s; --dx: 40px; --peak: 0.5;  left: 82%; bottom: 3%;"></span>
+                <span class="mote mote--rose" style="--dur: 22s; --delay: 9s;  --dx: -34px; --peak: 0.45; left: 47%; bottom: 0%;"></span>
+                <span class="mote" style="--dur: 26s; --delay: 12s; --dx: 22px;  --peak: 0.4;  left: 91%; bottom: 9%;"></span>
+            </div>
+
+            <div class="orbit-ring" id="orbit-ring"></div>
+        </div>
+
+        <div class="orbit-hud">
+            <button class="orbit-hud__btn" id="orbit-toggle" type="button" aria-pressed="false" aria-label="Pause the orbit">
+                <span class="orbit-hud__icon" aria-hidden="true"></span>
+                <span class="orbit-hud__label">Pause orbit</span>
+            </button>
+            <span class="orbit-hud__count" id="photo-count">6 memories</span>
+            <span class="orbit-hud__hint">Drag to explore · click to enlarge</span>
+        </div>
+
+        <nav class="memories__nav" data-reveal>
+            <a class="btn btn--primary" href="birthday.html">
+                Back to the letter <span class="btn__arrow" aria-hidden="true">→</span>
+            </a>
+            <a class="btn btn--ghost" href="../index.html">Return to the intro</a>
+        </nav>
+
+    </main>
+
+    <!-- lightbox -------------------------------------------------------------- -->
+    <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Enlarged memory" aria-hidden="true">
+        <button class="lightbox__btn lightbox__btn--close" type="button" aria-label="Close">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true">
+                <path d="M6 6l12 12M18 6L6 18" />
+            </svg>
+        </button>
+        <button class="lightbox__btn lightbox__btn--prev" type="button" aria-label="Previous memory">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M15 5l-7 7 7 7" />
+            </svg>
+        </button>
+        <button class="lightbox__btn lightbox__btn--next" type="button" aria-label="Next memory">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M9 5l7 7-7 7" />
+            </svg>
+        </button>
+
+        <div class="lightbox__inner">
+            <figure class="lightbox__figure">
+                <img alt="" />
+            </figure>
+            <div class="lightbox__caption">
+                <span data-lb-title>Memory</span>
+                <span class="rule" aria-hidden="true"></span>
+                <span data-lb-index>01 / 06</span>
+            </div>
+        </div>
+    </div>
+
+    <script src="../app.js"></script>
+</body>
+</html>

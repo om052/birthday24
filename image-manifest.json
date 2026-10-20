@@ -1,0 +1,12 @@
+{
+    "portrait": "assets/images/portrait.jpeg",
+    "memories": [
+        "assets/images/memory-01.png",
+        "assets/images/memory-02.png",
+        "assets/images/memory-03.png",
+        "assets/images/memory-04.png",
+        "assets/images/memory-05.png",
+        "assets/images/memory-06.png"
+    ],
+    "manifestStatus": "active"
+}
